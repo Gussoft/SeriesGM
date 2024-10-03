@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: seriesgm
+  r2dbc:
+    username: postgres
+    password: root
+    url: r2dbc:postgresql://localhost:5432/animegm?serverTimezone=America/Lima
+  sql:
+    init:
+      mode: always
+#  flyway:
+#    url: jdbc:postgresql://localhost:5432/seriesgm
+#    user: postgres
+#    password: root
+#    enabled: true
+#    locations: classpath:db/migration
+#    baseline-on-migrate: true
+#    driver: org.postgresql.Driver
+#    default-schema: seriesgm
+r2dbc:
+  migrate:
+    resources-paths: classpath:db/migration/*.sql
+
